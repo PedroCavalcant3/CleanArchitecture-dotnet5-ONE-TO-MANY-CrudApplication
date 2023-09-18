@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CleanArch.Application.ViewModels.SupplierViewModel>
+<h2>Suppliers</h2>
+
+<p>
+    <a asp-action="Create">Create New Supplier</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            <tr>
+                <td>@supplier.Id</td>
+                <td>@supplier.Name</td>
+                <td>@supplier.Category</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@supplier.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@supplier.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@supplier.Id">Delete</a> |
+                    <a asp-action="products" asp-route-id="@supplier.Id">Products</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -15,3 +15,5 @@ namespace CleanArch.Application.Interfaces
         Task RemoveSupplierAsync(int id);
     }
 }
+
+

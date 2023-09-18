@@ -106,6 +106,15 @@ namespace CleanArch.MVC.Controllers
             return View(supplierViewModel);
         }
 
+        //implementando a busca de produtos pelo vinculo relacional
+        public async Task<IActionResult> products()
+        {
+            var suppliers = await _supplierService.GetSuppliersWithProductsAsync();
+            return View(suppliers);
+        }
+
+
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

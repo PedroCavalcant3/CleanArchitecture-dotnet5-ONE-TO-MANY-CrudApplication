@@ -17,3 +17,5 @@ namespace CleanArch.Application.Interfaces
         void Remove(int? id);
     }
 }
+
+

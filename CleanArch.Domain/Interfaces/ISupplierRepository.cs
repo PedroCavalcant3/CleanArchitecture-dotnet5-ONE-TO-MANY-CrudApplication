@@ -1,7 +1,6 @@
-﻿using System;
+﻿using CleanArch.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CleanArch.Domain.Entities;
 
 namespace CleanArch.Domain.Interfaces
 {
@@ -9,8 +8,11 @@ namespace CleanArch.Domain.Interfaces
     {
         Task<IEnumerable<Supplier>> GetSuppliersAsync();
         Task<Supplier> GetSupplierByIdAsync(int id);
+        Task<IEnumerable<Supplier>> GetSuppliersWithProductsAsync(); // Adicional
         Task AddSupplierAsync(Supplier supplier);
         Task UpdateSupplierAsync(Supplier supplier);
         Task RemoveSupplierAsync(int id);
+        Task SaveChangesAsync();
+        void Dispose();
     }
 }

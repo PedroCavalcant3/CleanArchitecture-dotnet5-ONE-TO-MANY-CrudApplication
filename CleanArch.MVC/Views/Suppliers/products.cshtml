@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CleanArch.Application.ViewModels.SupplierViewModel>
+
+<h2>Suppliers with Products</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Supplier ID</th>
+            <th>Supplier Name</th>
+            <th>Products</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            <tr>
+                <td>@supplier.Id</td>
+                <td>@supplier.Name</td>
+                <td>
+                    @if (supplier.Products != null && supplier.Products.Any())
+                    {
+                        <ul>
+                            @foreach (var product in supplier.Products)
+                            {
+                                <li>@product.Name - @product.Description - @product.Price</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No products available.</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index">Back to Suppliers List</a>

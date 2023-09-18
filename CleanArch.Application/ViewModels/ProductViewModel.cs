@@ -30,5 +30,7 @@ namespace CleanArch.Application.ViewModels
         [DisplayName("Price")]
         [DisplayFormat(DataFormatString = "{0:C2}")]
         public decimal Price { get; set; }
+
+        public int SupplierId { get; set; }
     }
 }
